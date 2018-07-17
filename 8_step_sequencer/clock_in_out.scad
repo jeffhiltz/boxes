@@ -31,12 +31,12 @@ module 8stepClockInOut() {
     }
     translate([12.5, (letter_size / 2) + 2.0, 3 - letter_height]) {
       linear_extrude(height = letter_height) {
-        text("IN", size = letter_size, font = font, halign = "center", valign = "center", $fn = 64);
+        text("OUT", size = letter_size, font = font, halign = "center", valign = "center", $fn = 64);
       }
     }
     translate([37.5, (letter_size / 2) + 2.0, 3 - letter_height]) {
       linear_extrude(height = letter_height) {
-        text("OUT", size = letter_size, font = font, halign = "center", valign = "center", $fn = 64);
+        text("IN", size = letter_size, font = font, halign = "center", valign = "center", $fn = 64);
       }
     }
   }
