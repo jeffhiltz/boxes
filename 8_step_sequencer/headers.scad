@@ -3,7 +3,7 @@ use <../../components/headers/headers.scad>
 module 8stepHeaders() {
   font = "Futura:style=Bold";
 
-  letter_size = 3.0;
+  letter_size = 3.5;
   letter_height = 0.5;
 
   //length_pin_count = 8;
@@ -26,7 +26,7 @@ module 8stepHeaders() {
     }
 
     line_width = 3.0;
-    line_length = 0.5; // (y-axis)
+    line_length = 1.0; // (y-axis)
 
     // clock lines
     for (i = [0:7]) {
