@@ -1,4 +1,4 @@
-$fn = 32;
+$fn = 64;
 
 use <../../components/box/top.scad>
 
@@ -80,11 +80,13 @@ cutoutsE = [
 surface(box_width, box_length, box_thickness, cutoutsE);
 
 // preview
-use <./movement_output.scad>
-translate([10, 55, 0]) 8stepMovementOutput();
-use <./headers.scad>;
-translate([60, 55, 0]) 8stepHeaders();
+use <./movement.scad>
+translate([10, 55, 0]) 8stepMovement();
+use <./freq_out.scad>
+translate([60, 55, 0]) 8stepFreqOut();
 use <./clock_in_out.scad>
-translate([110, 55, 0]) 8stepClockInOut();
+translate([85, 55, 0]) 8stepClockInOut();
 use <./clock_select_tempo.scad>
-translate([160, 55, 0]) 8stepClockSelectTempo();
+translate([135, 55, 0]) 8stepClockSelectTempo();
+use <./master_freq.scad>
+translate([185, 55, 0]) 8stepMasterFreq();
