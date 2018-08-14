@@ -3,19 +3,22 @@ use <../../components/potentiometer/pot.scad>
 module 8stepMasterFreq() {
   font = "Futura:style=Bold";
 
-  letter_size = 4.0;
-  letter_height = 0.8;
+  width = 25;
+  length = 30;
 
-  pot(25, 25, 3, [90]);
-  
-  translate([12.5, 25.0 - (letter_size / 2) - 2.0, 3]) {
-    linear_extrude(height = letter_height) {
-      text("MASTER", size = letter_size, font = font, halign = "center", valign = "center", $fn = 64);
-    }
-  }
-  translate([12.5, (letter_size / 2) + 2.0, 3]) {
+  letter_size = 5.0;
+  letter_height = 1.0;
+
+  pot(width, length, 3, [90]);
+
+  translate([width / 2, length - ((length - 8) / 4), 3]) {
     linear_extrude(height = letter_height) {
       text("FREQ", size = letter_size, font = font, halign = "center", valign = "center", $fn = 64);
+    }
+  }
+  translate([width / 2, (length - 8) / 4, 3]) {
+    linear_extrude(height = letter_height) {
+      text("OFFSET", size = letter_size, font = font, halign = "center", valign = "center", $fn = 64);
     }
   }
 }

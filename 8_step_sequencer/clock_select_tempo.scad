@@ -4,8 +4,11 @@ use <../../components/potentiometer/pot.scad>
 module 8stepClockSelectTempo() {
   font = "Futura:style=Bold";
 
-  letter_size = 4.0;
-  letter_height = 0.5;
+  width = 25;
+  length = 30;
+
+  letter_size = 5.0;
+  letter_height = 1.0;
 
   module arrow() {
     // square part of arrow
@@ -32,35 +35,33 @@ module 8stepClockSelectTempo() {
       );
   }
 
-  difference() {
-    union() {
-      mts(25, 25, 3);
-      translate([25, 0, 0])
-        pot(25, 25, 3, [90]);
+  mts(width, length, 3, 90);
+  translate([width, 0, 0])
+    pot(width, length, 3, [90]);
+  
+  translate([(width - 10 - 8) / 2, length / 2, 3]) arrow();
+  translate([width - ((width - 10 - 8) / 2), length / 2, 3]) mirror([1, 0, 0]) arrow();
+//  translate([width / 6, length / 2, 3]) arrow();
+//  translate([width - (width / 6), length / 2, 3]) mirror([1, 0, 0]) arrow();
+  
+  translate([width / 2, length - ((length - 8) / 4), 3]) {
+    linear_extrude(height = letter_height) {
+      text("CLK", size = letter_size, font = font, halign = "center", valign = "center", $fn = 64);
     }
-    
-    translate([5.0, 12.5, 3 - letter_height]) arrow();
-    translate([20.0, 12.5, 3 - letter_height]) mirror([1, 0, 0]) arrow();
-
-    translate([12.5, 25.0 - (letter_size / 2) - 2.0, 3 - letter_height]) {
-      linear_extrude(height = letter_height) {
-        text("CLOCK", size = letter_size, font = font, halign = "center", valign = "center", $fn = 64);
-      }
+  }
+  translate([width / 2, (length - 8) / 4, 3]) {
+    linear_extrude(height = letter_height) {
+      text("SELECT", size = letter_size, font = font, halign = "center", valign = "center", $fn = 64);
     }
-    translate([37.5, 25.0 - (letter_size / 2) - 2.0, 3 - letter_height]) {
-      linear_extrude(height = letter_height) {
-        text("CLOCK", size = letter_size, font = font, halign = "center", valign = "center", $fn = 64);
-      }
+  }
+  translate([width * 1.5, length - ((length - 8) / 4), 3]) {
+    linear_extrude(height = letter_height) {
+      text("CLK", size = letter_size, font = font, halign = "center", valign = "center", $fn = 64);
     }
-    translate([12.5, (letter_size / 2) + 2.0, 3 - letter_height]) {
-      linear_extrude(height = letter_height) {
-        text("SELECT", size = letter_size, font = font, halign = "center", valign = "center", $fn = 64);
-      }
-    }
-    translate([37.5, (letter_size / 2) + 2.0, 3 - letter_height]) {
-      linear_extrude(height = letter_height) {
-        text("RATE", size = letter_size, font = font, halign = "center", valign = "center", $fn = 64);
-      }
+  }
+  translate([width * 1.5, (length - 8) / 4, 3]) {
+    linear_extrude(height = letter_height) {
+      text("RATE", size = letter_size, font = font, halign = "center", valign = "center", $fn = 64);
     }
   }
 }
