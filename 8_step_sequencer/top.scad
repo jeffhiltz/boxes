@@ -11,8 +11,6 @@ cutouts = [
   [200, 10,  7,  7], // 8 sequencer step LEDs
   [200, 20,  7, 22], // 8 sequencer step pots
   [200, 30,  7, 47], // other components
-//  [ 25, 25,  10, 55], // move/step
-//  [150, 25,  60, 55], // other components
 ];
 
 surface(box_width, box_length, box_thickness, cutouts);
