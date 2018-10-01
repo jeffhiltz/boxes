@@ -16,12 +16,11 @@ An 8 step sequencer with:
  * 8 pots for setting frequency of carrier oscillator in sequence
  * 1 pot for controlling modulator
  * 1 pot for controlling tempo
+ * 1 output volume pot
 
 ### Planned
 
- * output volume pot
  * pot to control low pass filter
-
 
 ### Potential
 
